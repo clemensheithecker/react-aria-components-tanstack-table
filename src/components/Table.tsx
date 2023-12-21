@@ -1,5 +1,14 @@
-import type { ColumnProps as ColumnPrimitiveProps } from "react-aria-components";
-import { Column as ColumnPrimitive } from "react-aria-components";
+import type {
+  ColumnProps as ColumnPrimitiveProps,
+  TableHeaderProps as TableHeaderPrimitiveProps,
+} from "react-aria-components";
+import {
+  Collection,
+  Column as ColumnPrimitive,
+  TableHeader as TableHeaderPrimitive,
+  useTableOptions,
+} from "react-aria-components";
+import Checkbox from "./Checkbox";
 
 type ColumnProps = Omit<ColumnPrimitiveProps, "className" | "styles">;
 
@@ -21,5 +30,28 @@ export function Column(props: ColumnProps) {
         </>
       )}
     </ColumnPrimitive>
+  );
+}
+
+type TableHeaderProps<T extends object> = Omit<
+  TableHeaderPrimitiveProps<T>,
+  "className" | "styles"
+>;
+
+export function TableHeader<T extends object>({
+  columns,
+  children,
+}: TableHeaderProps<T>) {
+  const { selectionBehavior, selectionMode } = useTableOptions();
+
+  return (
+    <TableHeaderPrimitive className="border-b text-[#393939] after:table-row after:h-0.5 after:content-[''] [&>tr]:last:cursor-default [&>tr]:last:border-solid [&>tr]:last:border-[#8f8f8f]">
+      {selectionBehavior === "toggle" && (
+        <Column>
+          {selectionMode === "multiple" && <Checkbox slot="selection" />}
+        </Column>
+      )}
+      <Collection items={columns}>{children}</Collection>
+    </TableHeaderPrimitive>
   );
 }

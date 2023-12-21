@@ -1,12 +1,6 @@
-import {
-  Cell,
-  Row,
-  Table,
-  TableBody,
-  TableHeader,
-} from "react-aria-components";
+import { Cell, Row, Table, TableBody } from "react-aria-components";
 import Checkbox from "./components/Checkbox";
-import { Column } from "./components/Table";
+import { Column, TableHeader } from "./components/Table";
 
 function App() {
   return (
@@ -16,9 +10,6 @@ function App() {
       </h1>
       <Table aria-label="Files" selectionMode="multiple">
         <TableHeader>
-          <Column>
-            <Checkbox slot="selection" />
-          </Column>
           <Column isRowHeader>Name</Column>
           <Column>Type</Column>
           <Column>Date Modified</Column>
