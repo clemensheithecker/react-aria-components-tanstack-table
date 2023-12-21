@@ -1,12 +1,12 @@
 import {
   Cell,
-  Column,
   Row,
   Table,
   TableBody,
   TableHeader,
 } from "react-aria-components";
 import Checkbox from "./components/Checkbox";
+import { Column } from "./components/Table";
 
 function App() {
   return (
