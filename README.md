@@ -8,4 +8,5 @@ Additionally, the project utilizes:
 - [TypeScript](https://www.typescriptlang.org/): For type-safe JavaScript development.
 - [Vite](https://vitejs.dev/): For fast frontend builds.
 - [Tailwind CSS](https://tailwindcss.com/) For utility-first styling.
+- [Tailwind CSS Prettier Plugin](https://github.com/tailwindlabs/prettier-plugin-tailwindcss): For CSS classes sorting.
 - [React Aria Components Tailwind CSS Plugin](https://react-spectrum.adobe.com/react-aria/styling.html#plugin): For shorter modifier names.
